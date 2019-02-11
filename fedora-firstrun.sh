@@ -152,7 +152,7 @@ fc-cache -v
 
 # ADDING ADDITIONAL TOOLS AND PROGRAMS
 
-echo "Installing Conky for making your desktop come alive ;)"
+echo "Installing Conky for making your desktop come alive"
 dnf install conky-manager
 
 echo "Installing libgnome-keyring, needed to auto safe for some programms"
