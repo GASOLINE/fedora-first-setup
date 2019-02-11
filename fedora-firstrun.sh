@@ -164,7 +164,7 @@ dnf install klavaro -y
 dnf install tuxtype2 -y
 
 
-echo "FINISHED ;) That went smooth didn it?"
+echo "FINISHED! That went smooth didn it?"
 echo "Now start configure some things, you have to do that yourself."
 echo "Good luck with that."
 echo "Enjoy your Fedora!."
