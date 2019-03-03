@@ -172,4 +172,4 @@ echo "Proudly build for you by MrMarcie."
 
 	    esac
 	done
-f1
+fi
