@@ -158,10 +158,14 @@ dnf install conky-manager
 echo "Installing libgnome-keyring, needed to auto safe for some programms"
 dnf install libgnome-keyring
 
-echo "Installing soem programs to learn blindtyping with 10 fingers"
+echo "Installing some programs to learn blindtyping with 10 fingers"
 dnf install gtypist -y
 dnf install klavaro -y
 dnf install tuxtype2 -y
+
+echo "Installing Etcher for 'burning' ISO's to USB sticks"
+sudo wget https://balena.io/etcher/static/etcher-rpm.repo -O /etc/yum.repos.d/etcher-rpm.repo
+sudo dnf install -y balena-etcher-electron
 
 
 echo "FINISHED! That went smooth didn it?"
