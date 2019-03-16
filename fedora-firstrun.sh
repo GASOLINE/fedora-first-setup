@@ -14,7 +14,7 @@ else
 clear
 
 # Let's start:
-echo "!!! LET'S START NOW"
+echo "!!! LET'S START NOW !!!"
 
 read -p "Press enter to check if system is up-to-date before we gonna install all programs"
 
