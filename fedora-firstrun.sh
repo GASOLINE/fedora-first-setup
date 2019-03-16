@@ -113,6 +113,9 @@ dnf install git -y
 dnf install nodejs -y
 sudo npm install gulp-cli -g
 
+echo "Adding XCLIP for f.e. copying ssh keys"
+sudo dnf installxclip
+
 
 #INSTALL VISUAL STUDIO CODE
 echo "Installing the awesome VSCODE editor. Microsoft sometimes got thnings right ;)
