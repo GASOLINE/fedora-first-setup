@@ -64,8 +64,7 @@ echo "Installing Digikam"
 dnf install digikam -y
 
 echo "Installing Spotify"
-dnf install lpf-spotify-client -y
-
+flatpak install flathub com.spotify.Client -y
 echo "Installing Gradio"
 dnf install gradio -y
 
