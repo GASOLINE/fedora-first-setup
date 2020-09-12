@@ -34,6 +34,7 @@ echo "!!!! First let's install depedencies"
 
 dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm -y
 dnf install -y flatpak
+#flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
 # GRAPHICS AND MULTIMEDIA
 
@@ -81,6 +82,7 @@ echo "Adding some tools & utilities"
 dnf install blivet-gui -y
 dnf install lm_sensors -y
 dnf install bleachbit -y
+dnf install nvme-cli -y
 
 echo "Installing Passwordsafe"
 dnf copr enable simger/passwordsafe
@@ -88,18 +90,19 @@ dnf install passwordsafe -y
 
 # ADDING INTERNET & MAIL & COMMUNICATION
 
-echo "Installing Chrome"
+echo "Installing Chrome & Chromium"
 #INSTALL CHROME
 dnf install fedora-workstation-repositories -y
 dnf config-manager --set-enabled google-chrome
 dnf install google-chrome-stable -y
+dnf install chromium
 
 echo "Installing the best emailclient: Thunderbird"
 dnf install thunderbird -y
 
-echo "Installing Skype"
-wget https://go.skype.com/skypeforlinux-64.rpm
-dnf install skypeforlinux-64.rpm -y
+#echo "Installing Skype"
+#wget https://go.skype.com/skypeforlinux-64.rpm
+#dnf install skypeforlinux-64.rpm -y
 
 # ADDING DEVELOPMENT TOOLS & UTILITIES
 
@@ -107,6 +110,7 @@ echo "Adding Development tools & utilities"
 dnf install git -y
 dnf install nodejs -y
 sudo npm install gulp-cli -g -y
+dnf install sqlitebrowser -y
 
 echo "Adding XCLIP for f.e. copying ssh keys"
 sudo dnf install xclip -y
@@ -121,9 +125,8 @@ dnf install code -y
 echo "Installing VirtualBox"
 dnf install VirtualBox -y
 
-echo "Installing Putty & Filezilla. Sometimes this is more convenient"
+echo "Installing Filezilla."
 dnf install filezilla -y
-dnf install putty -y
 
 # ADDING DESKTOP PUBLISHING TOOLS
 
@@ -149,8 +152,9 @@ fc-cache -v
 
 # ADDING ADDITIONAL TOOLS AND PROGRAMS
 
-echo "Installing Conky for making your desktop come alive"
+echo "Installing Conky for making your desktop come alive and some other stuff"
 dnf install conky -y
+dnf install neofetch -y
 
 ##########echo "Make conky autostart"
 ####mkdir -p ~/.config/autostart
@@ -168,17 +172,20 @@ dnf install conky -y
 echo "Installing libgnome-keyring, needed to auto safe for some programms"
 dnf install libgnome-keyring -y
 
+echo "Installing Solaar, needed logitech mouse"
+dnf install solaar -y
+
 echo "Installing some programs to learn blindtyping with 10 fingers"
 dnf install gtypist -y
 dnf install klavaro -y
-dnf install ktouch -y
+#dnf install ktouch -y
 
 echo "Installing Guvcview, easy webcam software"
 dnf install guvcview -y
 
-echo "Installing Etcher for 'burning' ISO's to USB sticks"
-sudo wget https://balena.io/etcher/static/etcher-rpm.repo -O /etc/yum.repos.d/etcher-rpm.repo
-sudo dnf install -y balena-etcher-electron
+#echo "Installing Etcher for 'burning' ISO's to USB sticks"
+#sudo wget https://balena.io/etcher/static/etcher-rpm.repo -O /etc/yum.repos.d/etcher-rpm.repo
+#sudo dnf install -y balena-etcher-electron
 
 echo "FINISHED! That went smooth didn it?"
 echo "Now start configure some things, you have to do that yourself."
@@ -197,6 +204,6 @@ read -p "Press enter to restart your system or press Q to exit this script"
 
 reboot
 
-#FINISHED
+#FINISHED !
 	
 fi
